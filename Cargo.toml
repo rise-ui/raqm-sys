@@ -5,6 +5,7 @@ authors = ["Mike Lubinets <lubinetsm@yandex.ru>"]
 description = "sys bindings for libraqm"
 keywords = ["binding"]
 license = "MIT"
+repository = "https://github.com/mersinvald/raqm-sys"
 build = "build.rs"
 
 [build-dependencies]
