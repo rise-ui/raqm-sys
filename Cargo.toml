@@ -1,0 +1,13 @@
+[package]
+name = "raqm-sys"
+version = "0.1.0"
+authors = ["Mike Lubinets <lubinetsm@yandex.ru>"]
+description = "sys bindings for libraqm"
+keywords = ["binding"]
+license = "MIT"
+build = "build.rs"
+
+[build-dependencies]
+bindgen = "0.37.0"
+cc = "1.0.17"
+
