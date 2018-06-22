@@ -1,12 +1,15 @@
 [package]
 name = "raqm-sys"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Mike Lubinets <lubinetsm@yandex.ru>"]
 description = "sys bindings for libraqm"
 keywords = ["binding"]
 license = "MIT"
 repository = "https://github.com/mersinvald/raqm-sys"
 build = "build.rs"
+
+[dependencies]
+freetype = "0.4.0"
 
 [build-dependencies]
 bindgen = "0.37.0"

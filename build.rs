@@ -17,6 +17,32 @@ fn main() {
         .header("wrapper.h")
         // Pass freetype2 include path
         .clang_arg("-I/usr/include/freetype2/")
+        /* Whitelisting raqm stuff */
+        // Whitelist functions
+        .whitelist_function("raqm_create")
+        .whitelist_function("raqm_destroy")
+        .whitelist_function("raqm_reference")
+        .whitelist_function("raqm_add_font_feature")
+        .whitelist_function("raqm_set_language")
+        .whitelist_function("raqm_set_par_direction")
+        .whitelist_function("raqm_set_text")
+        .whitelist_function("raqm_set_text_utf8")
+        .whitelist_function("raqm_set_freetype_face")
+        .whitelist_function("raqm_set_freetype_face_range")
+        .whitelist_function("raqm_set_freetype_load_flags")
+        .whitelist_function("raqm_add_font_feature")
+        .whitelist_function("raqm_layout")
+        .whitelist_function("raqm_get_glyphs")
+        .whitelist_function("raqm_index_to_position")
+        .whitelist_function("raqm_position_to_index")
+        // Whitelist types
+        .whitelist_type("raqm_t")
+        .whitelist_type("raqm_direction_t")
+        .whitelist_type("raqm_glyph_t")
+        .whitelist_type("_raqm")
+        /* End of whitelist */
+        // Disable recursive whitelisting
+        .whitelist_recursively(false)
         // Finish the builder and generate the bindings.
         .generate()
         // Unwrap the Result and panic on failure.
