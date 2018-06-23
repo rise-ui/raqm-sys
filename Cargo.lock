@@ -216,7 +216,7 @@ dependencies = [
 
 [[package]]
 name = "raqm-sys"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "bindgen 0.37.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "cc 1.0.17 (registry+https://github.com/rust-lang/crates.io-index)",

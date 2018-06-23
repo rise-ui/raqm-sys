@@ -1,6 +1,6 @@
 [package]
 name = "raqm-sys"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Mike Lubinets <lubinetsm@yandex.ru>"]
 description = "sys bindings for libraqm"
 keywords = ["binding"]
