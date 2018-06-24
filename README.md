@@ -25,7 +25,7 @@ Use your distribution package manager to download and install the `libraqm`
 After installing `libraqm`, just add `raqm-sys` to your crate's dependencies
 
 ```toml
-raqm-sys = "0.2.1"
+raqm-sys = "0.3"
 ```
 
 And let the Cargo do it's magic!
