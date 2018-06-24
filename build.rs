@@ -1,3 +1,4 @@
+extern crate pkg_config;
 extern crate bindgen;
 extern crate cc;
 
@@ -5,8 +6,8 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    println!("cargo:rustc-link-lib=raqm");
-    println!("cargo:rustc-link-lib=freetype2");
+    let args = pkg_config::probe_library("raqm").expect("Unable to find libraqm");
+    let args = args.include_paths.iter().map(|p| format!("-I{}", p.to_str().expect("Error getting pkg_config include paths")));
 
     // The bindgen::Builder is the main entry point
     // to bindgen, and lets you build up options for
@@ -16,13 +17,12 @@ fn main() {
         // bindings for.
         .header("wrapper.h")
         // Pass freetype2 include path
-        .clang_arg("-I/usr/include/freetype2/")
+        .clang_args(args)
         /* Whitelisting raqm stuff */
         // Whitelist functions
         .whitelist_function("raqm_create")
         .whitelist_function("raqm_destroy")
         .whitelist_function("raqm_reference")
-        .whitelist_function("raqm_add_font_feature")
         .whitelist_function("raqm_set_language")
         .whitelist_function("raqm_set_par_direction")
         .whitelist_function("raqm_set_text")
